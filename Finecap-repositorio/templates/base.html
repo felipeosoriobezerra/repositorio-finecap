@@ -1,0 +1,302 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content />
+        <meta name="author" content />
+
+        
+
+
+        <title>FINECAP2023</title> 
+       
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        
+        <link href="{% static 'css/int.css' %}" rel="stylesheet">
+        
+    </head>
+    <body class="d-flex flex-column">
+        <main class="flex-shrink-0">
+            
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="http://127.0.0.1:8000/"><span class="fw-bolder text-primary">FELIPECAP 2023</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    
+                    {% if user.is_authenticated %}
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+
+                            
+                            <li class="nav-item"><a class="nav-link" href="{% url 'reservas:visualizar_reservas' %}">Reservas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'stands:stands_visualizar' %}">Stands</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'stands:stands_cadastro' %}">Cadastro de Stand</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'reservas:cadastro_reserva' %}">Cadastro de Reserva</a></li>
+                            
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+            </nav>
+            
+
+            {% block center %}
+            {% endblock %}      
+        </main> 
+
+        <footer class="bg-white py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0">Copyright &copy; Felipe Osório Bezerra</div></div>
+                    <div class="col-auto">
+                      
+
+                        {% if user.is_authenticated %}
+                        <form method="post" action="{% url 'account_logout' %}">
+                          {% csrf_token %}
+                          {% if redirect_field_value %}
+                          <input type="hidden" name="{{ redirect_field_name }}"
+                                 value="{{ redirect_field_value }}" />
+                          {% endif %}
+                          <button class="btn btn-outline-danger" type="submit">
+                            Logout</button>
+                          </form>
+                          
+                          {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        {% block javascript %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
+        integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"
+        integrity="sha512-0XDfGxFliYJPFrideYOoxdgNIvrwGTLnmK20xZbCAvPfLGQMzHUsaqZK8ZoH+luXGRxTrS46+Aq400nCnAT0/w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      
+            <script>
+              $(document).ready(function () {
+                $('.money').mask('0000,00', { reverse: true })
+              })
+            </script>
+            {% endblock javascript %}
+    </body>
+</html>
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
