@@ -104,7 +104,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "main.wsgi.application"
 AUTH_USER_MODEL = "users.User"
-LOGIN_REDIRECT_URL = "core:home"
+LOGIN_REDIRECT_URL = "core:index"
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUUNT_EMAIL_VERIFICATION = 'none'
 

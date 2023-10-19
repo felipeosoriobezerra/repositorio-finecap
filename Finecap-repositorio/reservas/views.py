@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.messages import views
 from django.contrib.auth.mixins import LoginRequiredMixin
+from users.permissions import GerentePermission
 
 
 #lista#
@@ -27,7 +28,7 @@ class ReservaCreateView(LoginRequiredMixin, generic.CreateView):
         messages.success(self.request, "Reserva cadastrada!")
         return super().form_valid(form)
 
-class ReservaUpdateView(LoginRequiredMixin, generic.UpdateView):
+class ReservaUpdateView(GerentePermission,LoginRequiredMixin, generic.UpdateView):
     model = Reserva
     form_class = ReservaForm
     success_url = reverse_lazy("reservas:visualizar_reservas")
@@ -37,7 +38,7 @@ class ReservaUpdateView(LoginRequiredMixin, generic.UpdateView):
         messages.success(self.request, "Reserva Atualizado!")
         return super().form_valid(form)
 
-class ReservaDeleteView(LoginRequiredMixin, views.SuccessMessageMixin,generic.DeleteView):
+class ReservaDeleteView(GerentePermission,LoginRequiredMixin, views.SuccessMessageMixin,generic.DeleteView):
     model = Reserva
     success_url = reverse_lazy("reservas:visualizar_reservas")
     success_message = "reserva deletada!"
